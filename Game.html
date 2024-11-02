@@ -5,13 +5,108 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Мій сайт </title>
     <link rel="stylesheet" href="style.css">
+    <style>
+      body {
+          background-color: brown;
+          font-family: Arial, sans-serif;
+          min-height: 120vh;
+          margin: 10;
+      }
+      .card-container {
+          display: grid;
+          grid-template-columns: repeat(5, 1fr);
+          gap: 20px;
+      }
+      .card {
+          width: 150px;
+          height: 200px;
+          border: 2px solid black;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          padding: 10px;
+          text-align: center;
+          border-radius: 10px;
+          background-color: rgba(0, 0, 0, 0.5);
+      }
+      .card .image-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+      .card .title {
+          font-size: 16px;
+          color: azure;
+      }
+  </style>
   </head>
 <body>
   <ul class="nav-links">
     <li><a href="index.html">Головна</a></li>
     <li class="center"><a href="Game.html">Ігри</a></li>
   </ul>
-
+  <div class="card-container">
+    <div class="card">
+        <div class="image-placeholder">
+          <img src="/img/csgo.png">
+        </div>
+        <div class="title">CS GO</div>
+    </div>
+    <div class="card">
+        <div class="image-placeholder">
+            <img src="/img/dota.png">
+        </div>
+        <div class="title">Dota2</div>
+    </div>
+    <div class="card">
+        <div class="image-placeholder"></div>
+            <img src="/img/bs.jpg">
+        <div class="title">Brawl Stars</div>
+    </div>
+    <div class="card">
+        <div class="image-placeholder">
+            <img src="https://static.cdnlogo.com/logos/p/57/pubg.png">
+        </div>
+        <div class="title">PUBG</div>
+    </div>
+    <div class="card">
+        <div class="image-placeholder"></div>
+            <img src="/img/teemf.png">
+        <div class="title">Teem fortress</div>
+    </div>
+    <div class="card">
+        <div class="image-placeholder">
+            <img src="/img/fort.png">
+        </div>
+        <div class="title">Fortnite</div>
+    </div>
+    <div class="card">
+        <div class="image-placeholder">
+            <img src="/img/valo.webp">
+        </div>
+        <div class="title">Valorant</div>
+    </div>
+    <div class="card">
+        <div class="image-placeholder">
+            <img src="/img/callda.jpg">
+        </div>
+        <div class="title">Call of Duty W</div>
+    </div>
+    <div class="card">
+        <div class="image-placeholder">
+            <img src="/img/wit.png">
+        </div>
+        <div class="title">Witcher</div>
+    </div>
+    <div class="card">
+        <div class="image-placeholder">
+            <img src="/img/gta.png">
+        </div>
+        <div class="title">GTA</div>
+    </div>
+</div>
 
 </body>
 </html>
