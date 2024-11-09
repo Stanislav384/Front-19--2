@@ -3,110 +3,157 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Мій сайт </title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-      body {
-          background-color: brown;
-          font-family: Arial, sans-serif;
-          min-height: 120vh;
-          margin: 10;
-      }
-      .card-container {
-          display: grid;
-          grid-template-columns: repeat(5, 1fr);
-          gap: 20px;
-      }
-      .card {
-          width: 150px;
-          height: 200px;
-          border: 2px solid black;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          padding: 10px;
-          text-align: center;
-          border-radius: 10px;
-          background-color: rgba(0, 0, 0, 0.5);
-      }
-      .card .image-placeholder img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 10px;
-        }
-      .card .title {
-          font-size: 16px;
-          color: azure;
-      }
-  </style>
+    <title>Мій сайт</title>
+    <link rel="stylesheet" href="Game.css">
+    
   </head>
 <body>
   <ul class="nav-links">
     <li><a href="index.html">Головна</a></li>
-    <li class="center"><a href="Game.html">Ігри</a></li>
+    <li><a href="Game.html">Ігри</a></li>
   </ul>
-  <div class="card-container">
-    <div class="card">
-        <div class="image-placeholder">
-          <img src="img/csgo.png">
+  
+  <div class="search-sort-container">
+    <div class="search-box">
+      <label for="search">Поиск игр:</label>
+      <input type="text" id="search" oninput="filterGames()" placeholder="Введите название...">
+    </div>
+    <div class="sort-box">
+      <label for="sort">Сортировка:</label>
+      <select id="sort" onchange="sortGames()">
+        <option value="default">По умолчанию</option>
+        <option value="alphabetical">По алфавиту</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="card-container" id="game-list">
+    <div class="card" data-title="CS GO">
+      <div class="image-placeholder"><img src="img/csgo.png"></div>
+      <div class="title">CS GO</div>
+    </div>
+    <div class="card" data-title="Dota2">
+      <div class="image-placeholder"><img src="img/dota.png"></div>
+      <div class="title">Dota2</div>
+    </div>
+    <div class="card" data-title="Brawl Stars">
+      <div class="image-placeholder"><img src="img/bs.png"></div>
+      <div class="title">Brawl Stars</div>
+    </div>
+    <div class="card" data-title="PUBG">
+      <div class="image-placeholder"><img src="https://static.cdnlogo.com/logos/p/57/pubg.png"></div>
+      <div class="title">PUBG</div>
+    </div>
+    <div class="card" data-title="Teem Fortress">
+      <div class="image-placeholder"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOMNjIk9UObQRWar2bFZns3ZfJRo46a0XsasTDORMA3-dJp3GN_OGABMbPQlhr0Ec213Y&usqp=CAU"></div>
+      <div class="title">Teem Fortress</div>
+    </div>
+    <div class="card" data-title="Fortnite">
+      <div class="image-placeholder"><img src="img/fort.png"></div>
+      <div class="title">Fortnite</div>
+    </div>
+    <div class="card" data-title="Valorant">
+      <div class="image-placeholder"><img src="img/valo.png"></div>
+      <div class="title">Valorant</div>
+    </div>
+    <div class="card" data-title="Call of Duty W">
+      <div class="image-placeholder"><img src="img/callda.png"></div>
+      <div class="title">Call of Duty W</div>
+    </div>
+    <div class="card" data-title="Witcher">
+      <div class="image-placeholder"><img src="img/wit.png"></div>
+      <div class="title">Witcher</div>
+    </div>
+    <div class="card" data-title="GTA">
+      <div class="image-placeholder"><img src="img/gta.png"></div>
+      <div class="title">GTA</div>
+    </div>
+  </div>
+
+  
+  <!-- Футер -->
+  <footer>
+    <div class="main-content">
+      <div class="left box">
+        <h2>About us</h2>
+        <div class="content">
+          <p>CodinNepal is a YouTube channel where you can learn web designing, web development, ui/ux designing, html css tutorial, hover animation and effects, javascript and jquery tutorial and related so on.</p>
+          <div class="social">
+            <a href="https://facebook.com/coding.np"><span class="fab fa-facebook-f"></span></a>
+            <a href="#"><span class="fab fa-twitter"></span></a>
+            <a href="https://instagram.com/coding.np"><span class="fab fa-instagram"></span></a>
+            <a href="https://youtube.com/c/codingnepal"><span class="fab fa-youtube"></span></a>
+          </div>
         </div>
-        <div class="title">CS GO</div>
-    </div>
-    <div class="card">
-        <div class="image-placeholder">
-            <img src="img/dota.png">
+      </div>
+      <div class="center box">
+        <h2>Address</h2>
+        <div class="content">
+          <div class="place">
+            <span class="fas fa-map-marker-alt"></span>
+            <span class="text">Birendranagar, Surkhet</span>
+          </div>
+          <div class="phone">
+            <span class="fas fa-phone-alt"></span>
+            <span class="text">+089-765432100</span>
+          </div>
+          <div class="email">
+            <span class="fas fa-envelope"></span>
+            <span class="text">abc@example.com</span>
+          </div>
         </div>
-        <div class="title">Dota2</div>
-    </div>
-    <div class="card">
-        <div class="image-placeholder"></div>
-            <img src="/img/bs.png">
-        <div class="title">Brawl Stars</div>
-    </div>
-    <div class="card">
-        <div class="image-placeholder">
-            <img src="https://static.cdnlogo.com/logos/p/57/pubg.png">
+      </div>
+      <div class="right box">
+        <h2>Contact us</h2>
+        <div class="content">
+          <form action="#">
+            <div class="email">
+              <div class="text">Email *</div>
+              <input type="email" required>
+            </div>
+            <div class="msg">
+              <div class="text">Message *</div>
+              <textarea rows="2" cols="25" required></textarea>
+            </div>
+            <div class="btn">
+              <button type="submit">Send</button>
+            </div>
+          </form>
         </div>
-        <div class="title">PUBG</div>
+      </div>
     </div>
-    <div class="card">
-        <div class="image-placeholder"></div>
-            <img src="img/teemf.png">
-        <div class="title">Teem fortress</div>
+    <div class="bottom">
+      <center>
+        <span class="credit">Created By <a href="https://www.codingnepalweb.com">CodingNepal</a> | </span>
+        <span class="far fa-copyright"></span><span> 2020 All rights reserved.</span>
+      </center>
     </div>
-    <div class="card">
-        <div class="image-placeholder">
-            <img src="img/fort.png">
-        </div>
-        <div class="title">Fortnite</div>
-    </div>
-    <div class="card">
-        <div class="image-placeholder">
-            <img src="/img/valo.png">
-        </div>
-        <div class="title">Valorant</div>
-    </div>
-    <div class="card">
-        <div class="image-placeholder">
-            <img src="/img/callda.png">
-        </div>
-        <div class="title">Call of Duty W</div>
-    </div>
-    <div class="card">
-        <div class="image-placeholder">
-            <img src="/img/wit.png">
-        </div>
-        <div class="title">Witcher</div>
-    </div>
-    <div class="card">
-        <div class="image-placeholder">
-            <img src="/img/gta.png">
-        </div>
-        <div class="title">GTA</div>
-    </div>
-</div>
+  </footer>
+
+  <script>
+    function filterGames() {
+      const query = document.getElementById('search').value.toLowerCase();
+      document.querySelectorAll('.card').forEach(card => {
+        const title = card.getAttribute('data-title').toLowerCase();
+        card.style.display = title.includes(query) ? '' : 'none';
+      });
+    }
+
+    function sortGames() {
+      const container = document.getElementById('game-list');
+      const sortType = document.getElementById('sort').value;
+      const cards = Array.from(container.querySelectorAll('.card'));
+
+      if (sortType === 'alphabetical') {
+        cards.sort((a, b) => a.getAttribute('data-title').localeCompare(b.getAttribute('data-title')));
+      } else {
+        cards.sort((a, b) => a.index - b.index);
+      }
+
+      container.innerHTML = '';
+      cards.forEach(card => container.appendChild(card));
+    }
+  </script>
 
 </body>
 </html>
